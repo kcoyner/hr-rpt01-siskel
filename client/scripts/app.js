@@ -5,14 +5,13 @@ var Movie = Backbone.Model.extend({
   },
 
   toggleLike: function() {
-    // your code here
-    if (this.like === true) {
-      return this.like = false;
-    } else  {
-      return this.like = true;
+    if (this.get('like') === true) {
+      this.set('like', false);
+    } else {
+      this.set('like', true);
     }
+    return this.get('like');
   }
-
 });
 
 var Movies = Backbone.Collection.extend({
